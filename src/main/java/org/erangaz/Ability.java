@@ -1,5 +1,5 @@
 package org.erangaz;
 
 public interface Ability {
-    void useAbility(String abilityName);
+    String useAbility(String abilityName, boolean consoleOutput);
 }

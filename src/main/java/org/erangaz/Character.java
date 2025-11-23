@@ -3,23 +3,21 @@ package org.erangaz;
 public abstract class Character {
     private String name;
     private int level;
-    private double health;
+    private int health;
 
-    public abstract void attack() throws ActionFailedException;
+    public abstract String attack(boolean consoleOutput) throws ActionFailedException;
+    public abstract void showInfo();
+    public abstract String getInfo();
 
-    Character(String name, double health){
+    Character(String name, int health){
         this.name = name;
         this.health = health;
         this.level = 1;
     }
-    public void takeDamage(double damage){
+
+    public void takeDamage(int damage){
         this.health = health - damage;
     }
-    public void showInfo(){
-        System.out.printf("Персонаж:\nИмя - %s\nУровень - %d\nЗдоровье - %f\n",
-                name, level, health);
-    }
-
     public String getName() {
         return name;
     }
@@ -36,11 +34,11 @@ public abstract class Character {
         this.level = level;
     }
 
-    public double getHealth() {
-        return (int)(health * 100) / 100.0;
+    public int getHealth() {
+        return health;
     }
 
-    public void setHealth(double health) {
+    public void setHealth(int health) {
         this.health = health;
     }
 }

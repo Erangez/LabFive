@@ -1,6 +1,6 @@
 package org.erangaz;
 
 public interface Equipment {
-    void equipItem(String itemName);
-    void removeItem(String itemName);
+    String equipItem(String itemName, boolean consoleOutput);
+    String removeItem(String itemName, boolean consoleOutput);
 }
