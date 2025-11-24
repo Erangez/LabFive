@@ -17,7 +17,6 @@ public class Frame extends JFrame implements ActionListener {
     final Color PANEL_COLOR = new Color(37, 39, 42);
     final Color PANEL_COLOR_BLUE = Color.decode("#3daee9");
     final Border BORDER_TRANSPARENT = BorderFactory.createLineBorder(new Color(0,0,0,0), 2);
-    final Border BORDER_BLUE = BorderFactory.createLineBorder(PANEL_COLOR_BLUE, 2);
     final Font FONT_14pt = new Font("fonts/airborne.ttf", Font.PLAIN, 14);
     final Font FONT_16pt = new Font("fonts/airborne.ttf", Font.PLAIN, 16);
 
@@ -253,7 +252,7 @@ public class Frame extends JFrame implements ActionListener {
         switch (groupList.getSelectedIndex()) {
             case 0:
                 returnCharacter = new Brawler(
-                        RANDOM_HUMAN_NAMES[new Random().nextInt(RANDOM_ANIMAL_NAMES.length)],
+                        RANDOM_HUMAN_NAMES[new Random().nextInt(RANDOM_HUMAN_NAMES.length)],
                         new Random().nextInt(300 - 100 + 1) + 100,
                         (double) (new Random().nextInt(30 - 10 + 1) + 10)
                 );
